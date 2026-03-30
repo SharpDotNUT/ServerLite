@@ -77,8 +77,8 @@ const getValue = (project: string, auth: string, key: string) => {
 
   // 使用预编译查询缓存
   const query = db.prepare(`SELECT value FROM ${project} WHERE key = ?`);
-  const row = query.get(key);
-  return row ? row : null;
+  const row = query.get(key) as any;
+  return row && row.value ? row.value : null;
 };
 
 const setValue = (

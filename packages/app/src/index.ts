@@ -33,11 +33,11 @@ app.delete('/api/project/:project', ({ params, query: { auth } }) => {
 });
 
 app.get('/:project/:key', ({ params, query: { auth } }) => {
-  return getValue(params.project, auth, params.key);
+  return JSON.stringify(getValue(params.project, auth, params.key));
 });
 
 app.post('/:project/:key', ({ params, query: { auth, value } }) => {
-  return setValue(params.project, auth, params.key, value);
+  return setValue(params.project, auth, params.key, JSON.parse(value));
 });
 
 app.delete('/:project/:key', ({ params, query: { auth } }) => {

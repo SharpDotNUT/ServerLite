@@ -8,8 +8,8 @@
     "@elysiajs/openapi": "^1.4.14",
     "dotenv": "^17.3.1",
     "elysia": "latest",
-    "ky": "^1.14.3",
-    "vitest": "^4.1.2"
+    "execa": "^9.6.1",
+    "ky": "^1.14.3"
   },
   "devDependencies": {
     "bun-types": "latest"
