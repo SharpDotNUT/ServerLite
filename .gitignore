@@ -1,2 +1,3 @@
 packages/app/database.db
 /.vscode
+/packages/app/dist

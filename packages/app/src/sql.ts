@@ -30,7 +30,6 @@ db.query<Project, []>('SELECT * FROM __projects__')
   .forEach((project) => {
     AuthCache.set(project.name, project.auth);
   });
-console.log('AuthCache:', AuthCache);
 
 const listProjects = () => {
   return AuthCache;

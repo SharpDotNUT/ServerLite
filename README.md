@@ -28,7 +28,7 @@
 
 ```bash
 # Clone and navigate to project directory
-cd your-project-directory/packages/app
+cd your-project-directory/packages/app/dist
 # or
 cd path-to-binary-file
 
@@ -36,7 +36,7 @@ cd path-to-binary-file
 echo "DATABASE=your_database_path.db" > .env
 
 # Start the service
-bun run index.ts
+bun run serverlite.ts
 # or
 ./serverlite
 ```
@@ -122,7 +122,3 @@ DELETE /:project/:key?auth=:auth
 1. Project names can only contain letters, numbers, and underscores, and must start with a letter or underscore
 2. All authentication tokens are hashed to ensure security
 3. Data for each project is stored in independent tables to achieve data isolation
-
-## License
-
-Please add license information as appropriate for your project.
