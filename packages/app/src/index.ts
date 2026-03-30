@@ -12,13 +12,25 @@ import {
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { parseArgs } from 'node:util';
 const filename = import.meta.filename as string;
 const dirname = path.dirname(filename);
+
+const argv = parseArgs({
+  args: Bun.argv,
+  options: {
+    port: {
+      type: 'string'
+    }
+  },
+  allowPositionals: true
+});
+const port = argv.values.port ?? Bun.env?.['port'] ?? 52112;
 
 export const app = new Elysia()
   .use(openapi())
   .get('/', () => 'Hello Elysia')
-  .listen(52112);
+  .listen(port);
 
 app.get('/api/list', () => {
   return [...listProjects().keys()];

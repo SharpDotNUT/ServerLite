@@ -41,7 +41,9 @@ bun run serverlite.ts
 ./serverlite
 ```
 
-The service runs by default at `http://localhost:52112`
+You can use the `--port=[port]` to specify a custom port for the service
+
+The service runs by default at `http://localhost:[port]`
 
 ## API Endpoints
 
@@ -51,7 +53,7 @@ The service runs by default at `http://localhost:52112`
 GET /api/list
 ```
 
-Returns a list of all current project names.
+Returns a list of all current project names
 
 ### 2. Create Project
 

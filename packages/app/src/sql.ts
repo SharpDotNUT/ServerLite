@@ -1,7 +1,7 @@
 import { Database } from 'bun:sqlite';
 import { hashPassword } from './utils';
 
-const db = new Database(Bun.env.DATABASE!);
+const db = new Database(Bun.env.DATABASE ?? 'database.db');
 
 interface Project {
   id: number;
